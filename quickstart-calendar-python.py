@@ -60,9 +60,12 @@ def primary_calendar():
 
 @app.route("/nylas/list-events", methods=["GET"])
 def list_events():
-    query_params = {"calendar_id": session["calendar"], "limit": 5}
-    events = nylas.events.list(session["grant_id"], query_params=query_params).data
-    return jsonify(events)
+    try:
+        query_params = {"calendar_id": session["calendar"], "limit": 5}
+        events = nylas.events.list(session["grant_id"], query_params=query_params).data
+        return jsonify(events)
+    except Exception as e:
+        return f'{e}'
 
 @app.route("/nylas/create-event", methods=["GET"])
 def create_event():
