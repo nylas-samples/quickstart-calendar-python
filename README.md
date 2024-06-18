@@ -17,7 +17,7 @@ EMAIL="<RECIPIENT_EMAIL_ADDRESS_HERE>"
 
 3. In the Nylas dashboard, create a new application and set the Hosted Authentication callback URI to `http://localhost:5000/oauth/exchange`
 
-3. Run the project
+4. Run the project
 
 ```bash
 python quickstart-calendar-python.py
